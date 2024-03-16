@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Super mercado - A-Frame</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+
+  <body>
+    
+    <div id="js-panel" style="display: none; position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(255, 255, 255, 0.9); z-index: 9999; text-align: center;">
+  
+    </div>
+
+    <a-scene>
+
+        <a-assets>
+          <img id="texturaBuzon" src="textures/texturaBuzon.jpg" />
+          <img id="texturaRojo" src="textures/texturaRojo.jpg" />
+        </a-assets>
+
+
+      <a-assets>
+        <a-asset-item id="mi-modelo" src="models/tienda.glb"></a-asset-item>
+        <a-asset-item id="mi-modelo2" src="models/persona2.glb"></a-asset-item>
+        <a-asset-item id="mi-modelo10" src="models/hamburgues.glb"></a-asset-item>
+      <a-asset-item id="mi-modelo11" src="models/pizz.glb"></a-asset-item>
+      <a-asset-item id="mi-modelo12" src="models/comida.glb"></a-asset-item>
+      <a-asset-item id="mi-modelo14" src="models/sopas.glb"></a-asset-item>
+      <a-asset-item id="mi-modelo15" src="models/carne1.glb"></a-asset-item>
+      <a-asset-item id="mi-modelo16" src="models/doblecarne.glb"></a-asset-item>
+      <a-asset-item id="mi-modelo17" src="models/trescarnes.glb"></a-asset-item>
+      <a-asset-item id="mi-modelo18" src="models/especial.glb"></a-asset-item>
+      <a-asset-item id="mi-modelo19" src="models/vegetariana.glb"></a-asset-item>
+      <a-asset-item id="mi-modelo20" src="models/pepperoni.glb"></a-asset-item>
+      </a-assets>
+
+      <a-entity
+        gltf-model="#mi-modelo"
+        rotation="0 0 0"
+      ></a-entity>
+      <a-entity
+        gltf-model="#mi-modelo2"
+        position="-12 0.1 -11.3"
+        rotation="0 90 0"
+        class="clickable3" cursor-listener
+      ></a-entity>
+
+      <a-entity id="modelo-adicional" gltf-model="#mi-modelo10" rotation="0 0 0" position="-11 1.2 -10.2" scale="2.3 2.3 2.3" visible="false"></a-entity>
+      <a-entity id="modelo-adicional2" gltf-model="#mi-modelo11" rotation="0 0 0" position="-11 1.2 -10.2" scale="1.3 1.3 1.3" visible="false"></a-entity>
+      <a-entity id="modelo-adicional3" gltf-model="#mi-modelo12" rotation="0 0 0" position="-11 1.2 -10.2" scale="0.04 0.04 0.04" visible="false"></a-entity>
+       <a-entity id="modelo-adicional4" gltf-model="#mi-modelo14" rotation="0 0 0" position="-11 1.2 -10.2" scale="0.01 0.01 0.01" visible="false"></a-entity>
+      <a-entity id="modelo-adicional5" gltf-model="#mi-modelo15" rotation="0 0 0" position="-11 1.2 -10.2" scale="0.2 0.2 0.2" visible="false"></a-entity>
+      <a-entity id="modelo-adicional6" gltf-model="#mi-modelo16" rotation="0 0 0" position="-11 1.2 -10.2" scale="0.1 0.1 0.1" visible="false"></a-entity>
+      <a-entity id="modelo-adicional7" gltf-model="#mi-modelo17" rotation="0 0 0" position="-11 1.2 -10.2" scale="0.1 0.1 0.1" visible="false"></a-entity>
+      <a-entity id="modelo-adicional8" gltf-model="#mi-modelo18" rotation="0 90 0" position="-11 1.2 -10.2" scale="1.5 1.5 1.5" visible="false"></a-entity>
+      <a-entity id="modelo-adicional9" gltf-model="#mi-modelo19" rotation="0 0 0" position="-11 1.2 -10.2" scale="1.3 1.3 1.3" visible="false"></a-entity>
+      <a-entity id="modelo-adicional10" gltf-model="#mi-modelo20" rotation="0 0 0" position="-11 1.2 -10.2" scale="0.4 0.4 0.4" visible="false"></a-entity>
+     
+
+      <a-entity position="-7 1.3 -9" rotation="0 0 0">
+        <a-box src="#texturaRojo" height="0.2" width="0.4" depth="0.1" class="clickable4" cursor-listener></a-box>
+        <a-text value="!!!" color="#ECF0F1" align="center" position="0 -0.02 0.05" scale="0.5 0.5 0.5" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt"></a-text>
+  
+      </a-entity>
+
+      <a-entity position="-6 1.3 -9" rotation="0 0 0">
+        <a-box src="#texturaBuzon" height="0.2" width="0.4" depth="0.1" class="clickable2" cursor-listener></a-box>
+        <a-text value="Ver AR" color="black" align="center" position="0 -0.02 0.05" scale="0.5 0.5 0.5" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt"></a-text>
+  
+      </a-entity>
+
+
+      <a-entity id="menu2" visible="false" position="-7 2.5 -12" rotation="0 0 0">
+        <a-plane color="white" width="3.5" height="1.5"></a-plane>
+        <a-text value="Bienvenido!" color="black" align="center" position="0 0.2 0.05"></a-text>
+        <a-text value="Puedes realizar un recorrido o acceder al modo AR" color="black" align="center" position="0 -0.3 0.05" scale="0.7 0.7 0.7" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt"></a-text>
+      </a-entity>
+
+
+
+      <a-entity camera wasd-controls look-controls position="-7 2 3">
+        <a-entity cursor position="0 0 -1" geometry="primitive:ring; radiusInner:0.03; radiusOuter:0.04;"></a-entity>
+      </a-entity>
+      
+      <a-sky color="skyblue"></a-sky>
+
+
+
+      <script>
+        // Al cargar el documento
+        document.addEventListener("DOMContentLoaded", function() {
+          var menu = document.getElementById('form-container');
+          var box = document.querySelector('.clickable');
+          var box2 = document.querySelector('.clickable2');
+          var menu2 = document.getElementById('menu2');
+          var box3 = document.querySelector('.clickable3');
+  
+          var box4 = document.querySelector('.clickable4');
+          let modeloVisible = false;
+          var jsPanel = document.getElementById('js-panel');
+          
+          const modeloAdicional = document.getElementById("modelo-adicional");
+          const modeloAdicional2 = document.getElementById("modelo-adicional2");
+          const modeloAdicional3 = document.getElementById("modelo-adicional3");
+          const modeloAdicional4 = document.getElementById("modelo-adicional4");
+          const modeloAdicional5 = document.getElementById("modelo-adicional5");
+          const modeloAdicional6 = document.getElementById("modelo-adicional6");
+          const modeloAdicional7 = document.getElementById("modelo-adicional7");
+          const modeloAdicional8 = document.getElementById("modelo-adicional8");
+          const modeloAdicional9 = document.getElementById("modelo-adicional9");
+          const modeloAdicional10 = document.getElementById("modelo-adicional10");
+  
+          var isVisible = false;
+          const btnSendDataToBackend = document.getElementById('btnSendDataToBackend');
+  
+  
+  
+
+
+          box3.addEventListener('click', function() {
+
+            if (jsPanel.style.display === 'none') {
+              jsPanel.style.display = 'block';
+  
+              jsPanel.innerHTML = `
+           <div class="container">
+           <h2 class="mt-3">Selecciona tu pedido:</h2>
+           <select id="selectFood" class="form-control mb-3">
+             <option value="seleccionar">Seleccionar</option>
+            <option value="bebidas">Bebidas</option>
+            <option value="aseo">Aseo</option>
+            <option value="alimentos">Alimentos</option>
+            </select>
+            <div id="foodOptions"></div>
+            <button id="btnSendDataToBackend" class="btn btn-primary mt-3" style="display: none;">Enviar pedido</button>
+             </div>
+              
+             `;
+  
+              const selectFood = document.getElementById('selectFood');
+              const foodOptionsDiv = document.getElementById('foodOptions');
+              const btnSendDataToBackend = document.getElementById('btnSendDataToBackend');
+  
+              async function sendDataToBackend(data) {
+                try {
+                  const response = await axios.post("http://localhost:8080/productos/agregar", data);
+                  console.log("Respuesta del backend:", response.data);
+                  alert("Pedido enviado correctamente");
+                } catch (error) {
+                  console.error("Error al enviar datos al backend:", error);
+                  alert("Ocurrió un error al enviar los datos al backend.");
+                }
+              }
+  
+              function showFoodOptions() {
+                const selectedOption = selectFood.value;
+                let foodOptionsHTML = '';
+  
+                if (selectedOption === 'bebidas') {
+                  foodOptionsHTML = `
+            <h3>Selecciona el tipo de bebida:</h3>
+             <select id="bebidaOptions" class="form-control mb-3">
+             <option value="coca">CocaCola - $${obtenerPrecioHamburguesa('coca')}</option>
+              <option value="kola">Kola Roman - $${obtenerPrecioHamburguesa('kola')}</option>
+              <option value="jugos">Jugo natural - $${obtenerPrecioHamburguesa('jugos')}</option>
+             <option value="agua">Agua - $${obtenerPrecioHamburguesa('agua')}</option>
+             </select>
+             `;
+                  modeloAdicional.setAttribute('visible', 'true');
+                  modeloAdicional5.setAttribute('visible', 'false');
+                  modeloAdicional2.setAttribute('visible', 'false');
+                } else if (selectedOption === 'aseo') {
+  
+                  foodOptionsHTML = `
+                <h3>Selecciona el tipo de aseo:</h3>
+                <select id="aseoOptions" class="form-control mb-3">
+                  <option value="trapero">Trapero - $${obtenerPrecioPizza('trapero')}</option>
+                  <option value="balde">Balde - $${obtenerPrecioPizza('balde')}</option>
+                  <option value="guantes">Guantes - $${obtenerPrecioPizza('guantes')}</option>
+                </select>
+              `;
+                  modeloAdicional2.setAttribute('visible', 'true');
+                  modeloAdicional.setAttribute('visible', 'false');
+                  modeloAdicional5.setAttribute('visible', 'false');
+                } else if (selectedOption === 'alimentos') {
+  
+                  foodOptionsHTML = `
+                    <h3>Selecciona el tipo de alimentos:</h3>
+                    <select id="alimentoOptions" class="form-control mb-3">
+                      <option value="costilla">Costilla BBQ - $${obtenerPrecioAlmuerzo('costilla')}</option>
+                      <option value="sancocho">Sancocho - $${obtenerPrecioAlmuerzo('sancocho')}</option>
+                      <option value="corriente">Corriente - $${obtenerPrecioAlmuerzo('corriente')}</option>
+                    </select>
+                  `;
+  
+                  modeloAdicional5.setAttribute('visible', 'true');
+                  modeloAdicional2.setAttribute('visible', 'false');
+                  modeloAdicional.setAttribute('visible', 'false');
+                }
+  
+                foodOptionsHTML += `
+                      <label for="cantidad">Cantidad:</label>
+                      <input type="number" id="cantidad" name="cantidad" min="1" value="1">
+                    `;
+  
+                foodOptionsDiv.innerHTML = foodOptionsHTML;
+                btnSendDataToBackend.style.display = 'block';
+  
+                if (selectedOption === 'alimentos') {
+                  const alimentoOptions = document.getElementById('alimentoOptions');
+                  alimentoOptions.addEventListener('change', function() {
+                    const selectedAlimentoOptions = alimentoOptions.value;
+  
+                    if (selectedAlimentoOptions === 'corriente') {
+                      isVisible = true;
+                      modeloAdicional.setAttribute('visible', 'false');
+                      modeloAdicional2.setAttribute('visible', 'false');
+                      modeloAdicional3.setAttribute('visible', 'true');
+                      modeloAdicional4.setAttribute('visible', 'false');
+                      modeloAdicional5.setAttribute('visible', 'false');
+                      modeloAdicional6.setAttribute('visible', 'false');
+                      modeloAdicional7.setAttribute('visible', 'false');
+                      modeloAdicional8.setAttribute('visible', 'false');
+                      modeloAdicional9.setAttribute('visible', 'false');
+                      modeloAdicional10.setAttribute('visible', 'false');
+                    } else if (selectedAlimentoOptions === 'sancocho') {
+                      modeloAdicional.setAttribute('visible', 'false');
+                      modeloAdicional2.setAttribute('visible', 'false');
+                      modeloAdicional3.setAttribute('visible', 'false');
+                      modeloAdicional4.setAttribute('visible', 'true');
+                      modeloAdicional5.setAttribute('visible', 'false');
+                      modeloAdicional6.setAttribute('visible', 'false');
+                      modeloAdicional7.setAttribute('visible', 'false');
+                      modeloAdicional8.setAttribute('visible', 'false');
+                      modeloAdicional9.setAttribute('visible', 'false');
+                      modeloAdicional10.setAttribute('visible', 'false');
+                    } else if (selectedAlimentoOptions === 'costilla') {
+                      modeloAdicional.setAttribute('visible', 'false');
+                      modeloAdicional2.setAttribute('visible', 'false');
+                      modeloAdicional3.setAttribute('visible', 'false');
+                      modeloAdicional4.setAttribute('visible', 'false');
+                      modeloAdicional5.setAttribute('visible', 'true');
+                      modeloAdicional6.setAttribute('visible', 'false');
+                      modeloAdicional7.setAttribute('visible', 'false');
+                      modeloAdicional8.setAttribute('visible', 'false');
+                      modeloAdicional9.setAttribute('visible', 'false');
+                      modeloAdicional10.setAttribute('visible', 'false');
+                    } else {
+                      isVisible = false;
+                      modeloAdicional.setAttribute('visible', false);
+                      modeloAdicional2.setAttribute('visible', false);
+                      modeloAdicional3.setAttribute('visible', false);
+                      modeloAdicional4.setAttribute('visible', false);
+                      modeloAdicional5.setAttribute('visible', false);
+                      modeloAdicional6.setAttribute('visible', false);
+                      modeloAdicional7.setAttribute('visible', false);
+                      modeloAdicional8.setAttribute('visible', false);
+                      modeloAdicional9.setAttribute('visible', false);
+                      modeloAdicional10.setAttribute('visible', false);
+                    }
+                  });
+                } else if (selectedOption === 'bebidas') {
+                  const bebidasOptions = document.getElementById('bebidaOptions');
+                  bebidasOptions.addEventListener('change', function() {
+                    const selectedBebidaOptions = bebidasOptions.value;
+  
+                    if (selectedBebidaOptions === 'coca') {
+                      isVisible = true;
+                      modeloAdicional.setAttribute('visible', 'true');
+                      modeloAdicional2.setAttribute('visible', 'false');
+                      modeloAdicional3.setAttribute('visible', 'false');
+                      modeloAdicional4.setAttribute('visible', 'false');
+                      modeloAdicional5.setAttribute('visible', 'false');
+                      modeloAdicional6.setAttribute('visible', 'false');
+                      modeloAdicional7.setAttribute('visible', 'false');
+                      modeloAdicional8.setAttribute('visible', 'false');
+                      modeloAdicional9.setAttribute('visible', 'false');
+                      modeloAdicional10.setAttribute('visible', 'false');
+                    } else if (selectedBebidaOptions === 'kola') {
+                      modeloAdicional.setAttribute('visible', 'false');
+                      modeloAdicional2.setAttribute('visible', 'false');
+                      modeloAdicional3.setAttribute('visible', 'false');
+                      modeloAdicional4.setAttribute('visible', 'false');
+                      modeloAdicional5.setAttribute('visible', 'false');
+                      modeloAdicional6.setAttribute('visible', 'true');
+                      modeloAdicional7.setAttribute('visible', 'false');
+                      modeloAdicional8.setAttribute('visible', 'false');
+                      modeloAdicional9.setAttribute('visible', 'false');
+                      modeloAdicional10.setAttribute('visible', 'false');
+                    } else if (selectedBebidaOptions === 'jugos') {
+                      modeloAdicional.setAttribute('visible', 'false');
+                      modeloAdicional2.setAttribute('visible', 'false');
+                      modeloAdicional3.setAttribute('visible', 'false');
+                      modeloAdicional4.setAttribute('visible', 'false');
+                      modeloAdicional5.setAttribute('visible', 'false');
+                      modeloAdicional6.setAttribute('visible', 'false');
+                      modeloAdicional7.setAttribute('visible', 'true');
+                      modeloAdicional8.setAttribute('visible', 'false');
+                      modeloAdicional9.setAttribute('visible', 'false');
+                      modeloAdicional10.setAttribute('visible', 'false');
+                    } else if (selectedBebidaOptions === 'agua') {
+                      modeloAdicional.setAttribute('visible', 'false');
+                      modeloAdicional2.setAttribute('visible', 'false');
+                      modeloAdicional3.setAttribute('visible', 'false');
+                      modeloAdicional4.setAttribute('visible', 'false');
+                      modeloAdicional5.setAttribute('visible', 'false');
+                      modeloAdicional6.setAttribute('visible', 'false');
+                      modeloAdicional7.setAttribute('visible', 'false');
+                      modeloAdicional8.setAttribute('visible', 'true');
+                      modeloAdicional9.setAttribute('visible', 'false');
+                      modeloAdicional10.setAttribute('visible', 'false');
+                    } else {
+                      isVisible = false;
+                      modeloAdicional.setAttribute('visible', false);
+                      modeloAdicional2.setAttribute('visible', false);
+                      modeloAdicional3.setAttribute('visible', false);
+                      modeloAdicional4.setAttribute('visible', false);
+                      modeloAdicional5.setAttribute('visible', false);
+                      modeloAdicional6.setAttribute('visible', false);
+                      modeloAdicional7.setAttribute('visible', false);
+                      modeloAdicional8.setAttribute('visible', false);
+                      modeloAdicional9.setAttribute('visible', false);
+                      modeloAdicional10.setAttribute('visible', false);
+                    }
+                  });
+                } else if (selectedOption === 'aseo') {
+                  const aseoOptions = document.getElementById('aseoOptions');
+                  aseoOptions.addEventListener('change', function() {
+                    const selectedAseoOptions = aseoOptions.value;
+  
+                    if (selectedAseoOptions === 'trapero') {
+                      isVisible = true;
+                      modeloAdicional.setAttribute('visible', 'false');
+                      modeloAdicional2.setAttribute('visible', 'true');
+                      modeloAdicional3.setAttribute('visible', 'false');
+                      modeloAdicional4.setAttribute('visible', 'false');
+                      modeloAdicional5.setAttribute('visible', 'false');
+                      modeloAdicional6.setAttribute('visible', 'false');
+                      modeloAdicional7.setAttribute('visible', 'false');
+                      modeloAdicional8.setAttribute('visible', 'false');
+                      modeloAdicional9.setAttribute('visible', 'false');
+                      modeloAdicional10.setAttribute('visible', 'false');
+                    } else if (selectedAseoOptions === 'balde') {
+                      modeloAdicional.setAttribute('visible', 'false');
+                      modeloAdicional2.setAttribute('visible', 'false');
+                      modeloAdicional3.setAttribute('visible', 'false');
+                      modeloAdicional4.setAttribute('visible', 'false');
+                      modeloAdicional5.setAttribute('visible', 'false');
+                      modeloAdicional6.setAttribute('visible', 'false');
+                      modeloAdicional7.setAttribute('visible', 'false');
+                      modeloAdicional8.setAttribute('visible', 'false');
+                      modeloAdicional9.setAttribute('visible', 'false');
+                      modeloAdicional10.setAttribute('visible', 'true');
+                    } else if (selectedAseoOptions === 'guantes') {
+                      modeloAdicional.setAttribute('visible', 'false');
+                      modeloAdicional2.setAttribute('visible', 'false');
+                      modeloAdicional3.setAttribute('visible', 'false');
+                      modeloAdicional4.setAttribute('visible', 'false');
+                      modeloAdicional5.setAttribute('visible', 'false');
+                      modeloAdicional6.setAttribute('visible', 'false');
+                      modeloAdicional7.setAttribute('visible', 'false');
+                      modeloAdicional8.setAttribute('visible', 'false');
+                      modeloAdicional9.setAttribute('visible', 'true');
+                      modeloAdicional10.setAttribute('visible', 'false');
+                    } else {
+                      isVisible = false;
+                      modeloAdicional.setAttribute('visible', false);
+                      modeloAdicional2.setAttribute('visible', false);
+                      modeloAdicional3.setAttribute('visible', false);
+                      modeloAdicional4.setAttribute('visible', false);
+                      modeloAdicional5.setAttribute('visible', false);
+                      modeloAdicional6.setAttribute('visible', false);
+                      modeloAdicional7.setAttribute('visible', false);
+                      modeloAdicional8.setAttribute('visible', false);
+                      modeloAdicional9.setAttribute('visible', false);
+                      modeloAdicional10.setAttribute('visible', false);
+                    }
+                  });
+                }
+              }
+  
+  
+              selectFood.addEventListener('change', showFoodOptions);
+  
+              btnSendDataToBackend.addEventListener("click", async () => {
+                const selectedFood = selectFood.value;
+                let data = {
+                  nombre: "",
+                  descripcion: "",
+                  precio: "",
+                  cantidad: "",
+                  tipo: ""
+                };
+  
+                let precioSeleccionado = 0;
+  
+                if (selectedFood === "bebidas") {
+                  const bebidaOptions = document.getElementById('bebidaOptions');
+                  const selectedOption = bebidaOptions.value;
+                  precioSeleccionado = obtenerPrecioHamburguesa(selectedOption);
+                  const cantidad = document.getElementById('cantidad').value;
+                  data = {
+                    nombre: "Bebidas",
+                    descripcion: "Bebidas " + selectedOption,
+                    precio: precioSeleccionado,
+                    cantidad: cantidad,
+                    tipo: selectedOption
+                  };
+                } else if (selectedFood === "aseo") {
+                  const aseoOptions = document.getElementById('aseoOptions');
+                  const selectedOption = aseoOptions.value;
+                  precioSeleccionado = obtenerPrecioPizza(selectedOption);
+                  const cantidad = document.getElementById('cantidad').value;
+                  data = {
+                    nombre: "Aseo",
+                    descripcion: "Aseo " + selectedOption,
+                    precio: precioSeleccionado,
+                    cantidad: cantidad,
+                    tipo: selectedOption
+                  };
+                } else if (selectedFood === "alimentos") {
+                  const alimentoOptions = document.getElementById('alimentoOptions');
+                  const selectedOption = alimentoOptions.value;
+                  precioSeleccionado = obtenerPrecioAlmuerzo(selectedOption);
+                  const cantidad = document.getElementById('cantidad').value;
+                  data = {
+                    nombre: "Alimentos",
+                    descripcion: "Alimentos de " + selectedOption,
+                    precio: precioSeleccionado,
+                    cantidad: cantidad,
+                    tipo: selectedOption
+                  };
+                }
+  
+                await sendDataToBackend(data);
+  
+              });
+              modeloAdicional.setAttribute('visible', false);
+              modeloAdicional2.setAttribute('visible', false);
+              modeloAdicional3.setAttribute('visible', false);
+              modeloAdicional4.setAttribute('visible', false);
+              modeloAdicional5.setAttribute('visible', false);
+              modeloAdicional6.setAttribute('visible', false);
+              modeloAdicional7.setAttribute('visible', false);
+              modeloAdicional8.setAttribute('visible', false);
+              modeloAdicional9.setAttribute('visible', false);
+              modeloAdicional10.setAttribute('visible', false);
+  
+  
+            } else {
+              jsPanel.style.display = 'none';
+            }
+  
+  
+          });
+
+
+
+
+
+
+
+
+
+
+
+          function obtenerPrecioHamburguesa(tipo) {
+            switch (tipo) {
+              case 'coca':
+                return 12000;
+              case 'kola':
+                return 15000;
+              case 'jugos':
+                return 18000;
+              case 'agua':
+                return 20000;
+              default:
+                return 0;
+            }
+          }
+  
+          function obtenerPrecioPizza(tipo) {
+            switch (tipo) {
+              case 'trapero':
+                return 10000;
+              case 'balde':
+                return 13000;
+              case 'guantes':
+                return 14000;
+              default:
+                return 0;
+            }
+          }
+  
+          function obtenerPrecioAlmuerzo(tipo) {
+            switch (tipo) {
+              case 'costilla':
+                return 20000;
+              case 'sancocho':
+                return 15000;
+              case 'corriente':
+                return 10000;
+              default:
+                return 0;
+            }
+          }
+
+
+          box2.addEventListener('click', function() {
+            var url = 'https://192.168.1.6:8080/';
+            window.location.href = url;
+          });
+
+          var isVisible = false;
+  
+          box4.addEventListener('click', function() {
+            if (!isVisible) {
+              menu2.setAttribute('visible', 'true');
+            } else {
+              menu2.setAttribute('visible', 'false');
+            }
+            isVisible = !isVisible;
+          });
+  
+        });
+      </script>
+    </a-scene>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
