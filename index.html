@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <title>Super mercado - A-Frame</title>
-    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -14,87 +13,225 @@
   </head>
 
   <body>
-    
-    <div id="js-panel" style="display: none; position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(255, 255, 255, 0.9); z-index: 9999; text-align: center;">
-  
-    </div>
+    <div
+      id="js-panel"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 9999;
+        text-align: center;
+      "
+    ></div>
 
     <a-scene>
-
-        <a-assets>
-          <img id="texturaBuzon" src="textures/texturaBuzon.jpg" />
-          <img id="texturaRojo" src="textures/texturaRojo.jpg" />
-        </a-assets>
-
+      <a-assets>
+        <img id="texturaBuzon" src="textures/texturaBuzon.jpg" />
+        <img id="texturaRojo" src="textures/texturaRojo.jpg" />
+      </a-assets>
 
       <a-assets>
         <a-asset-item id="mi-modelo" src="models/tienda.glb"></a-asset-item>
         <a-asset-item id="mi-modelo2" src="models/persona2.glb"></a-asset-item>
-        <a-asset-item id="mi-modelo10" src="models/hamburgues.glb"></a-asset-item>
-      <a-asset-item id="mi-modelo11" src="models/pizz.glb"></a-asset-item>
-      <a-asset-item id="mi-modelo12" src="models/comida.glb"></a-asset-item>
-      <a-asset-item id="mi-modelo14" src="models/sopas.glb"></a-asset-item>
-      <a-asset-item id="mi-modelo15" src="models/carne1.glb"></a-asset-item>
-      <a-asset-item id="mi-modelo16" src="models/doblecarne.glb"></a-asset-item>
-      <a-asset-item id="mi-modelo17" src="models/trescarnes.glb"></a-asset-item>
-      <a-asset-item id="mi-modelo18" src="models/especial.glb"></a-asset-item>
-      <a-asset-item id="mi-modelo19" src="models/vegetariana.glb"></a-asset-item>
-      <a-asset-item id="mi-modelo20" src="models/pepperoni.glb"></a-asset-item>
+        <a-asset-item
+          id="mi-modelo10"
+          src="models/hamburgues.glb"
+        ></a-asset-item>
+        <a-asset-item id="mi-modelo11" src="models/pizz.glb"></a-asset-item>
+        <a-asset-item id="mi-modelo12" src="models/comida.glb"></a-asset-item>
+        <a-asset-item id="mi-modelo14" src="models/sopas.glb"></a-asset-item>
+        <a-asset-item id="mi-modelo15" src="models/carne1.glb"></a-asset-item>
+        <a-asset-item
+          id="mi-modelo16"
+          src="models/doblecarne.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="mi-modelo17"
+          src="models/trescarnes.glb"
+        ></a-asset-item>
+        <a-asset-item id="mi-modelo18" src="models/especial.glb"></a-asset-item>
+        <a-asset-item
+          id="mi-modelo19"
+          src="models/vegetariana.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="mi-modelo20"
+          src="models/pepperoni.glb"
+        ></a-asset-item>
       </a-assets>
 
-      <a-entity
-        gltf-model="#mi-modelo"
-        rotation="0 0 0"
-      ></a-entity>
+      <a-entity gltf-model="#mi-modelo" rotation="0 0 0"></a-entity>
       <a-entity
         gltf-model="#mi-modelo2"
         position="-12 0.1 -11.3"
         rotation="0 90 0"
-        class="clickable3" cursor-listener
+        class="clickable3"
+        cursor-listener
       ></a-entity>
 
-      <a-entity id="modelo-adicional" gltf-model="#mi-modelo10" rotation="0 0 0" position="-11 1.2 -10.2" scale="2.3 2.3 2.3" visible="false"></a-entity>
-      <a-entity id="modelo-adicional2" gltf-model="#mi-modelo11" rotation="0 0 0" position="-11 1.2 -10.2" scale="1.3 1.3 1.3" visible="false"></a-entity>
-      <a-entity id="modelo-adicional3" gltf-model="#mi-modelo12" rotation="0 0 0" position="-11 1.2 -10.2" scale="0.04 0.04 0.04" visible="false"></a-entity>
-       <a-entity id="modelo-adicional4" gltf-model="#mi-modelo14" rotation="0 0 0" position="-11 1.2 -10.2" scale="0.01 0.01 0.01" visible="false"></a-entity>
-      <a-entity id="modelo-adicional5" gltf-model="#mi-modelo15" rotation="0 0 0" position="-11 1.2 -10.2" scale="0.2 0.2 0.2" visible="false"></a-entity>
-      <a-entity id="modelo-adicional6" gltf-model="#mi-modelo16" rotation="0 0 0" position="-11 1.2 -10.2" scale="0.1 0.1 0.1" visible="false"></a-entity>
-      <a-entity id="modelo-adicional7" gltf-model="#mi-modelo17" rotation="0 0 0" position="-11 1.2 -10.2" scale="0.1 0.1 0.1" visible="false"></a-entity>
-      <a-entity id="modelo-adicional8" gltf-model="#mi-modelo18" rotation="0 90 0" position="-11 1.2 -10.2" scale="1.5 1.5 1.5" visible="false"></a-entity>
-      <a-entity id="modelo-adicional9" gltf-model="#mi-modelo19" rotation="0 0 0" position="-11 1.2 -10.2" scale="1.3 1.3 1.3" visible="false"></a-entity>
-      <a-entity id="modelo-adicional10" gltf-model="#mi-modelo20" rotation="0 0 0" position="-11 1.2 -10.2" scale="0.4 0.4 0.4" visible="false"></a-entity>
-     
+      <a-entity
+        id="modelo-adicional"
+        gltf-model="#mi-modelo10"
+        rotation="0 0 0"
+        position="-11 1.2 -10.2"
+        scale="2.3 2.3 2.3"
+        visible="false"
+      ></a-entity>
+      <a-entity
+        id="modelo-adicional2"
+        gltf-model="#mi-modelo11"
+        rotation="0 0 0"
+        position="-11 1.2 -10.2"
+        scale="1.3 1.3 1.3"
+        visible="false"
+      ></a-entity>
+      <a-entity
+        id="modelo-adicional3"
+        gltf-model="#mi-modelo12"
+        rotation="0 0 0"
+        position="-11 1.2 -10.2"
+        scale="0.04 0.04 0.04"
+        visible="false"
+      ></a-entity>
+      <a-entity
+        id="modelo-adicional4"
+        gltf-model="#mi-modelo14"
+        rotation="0 0 0"
+        position="-11 1.2 -10.2"
+        scale="0.01 0.01 0.01"
+        visible="false"
+      ></a-entity>
+      <a-entity
+        id="modelo-adicional5"
+        gltf-model="#mi-modelo15"
+        rotation="0 0 0"
+        position="-11 1.2 -10.2"
+        scale="0.2 0.2 0.2"
+        visible="false"
+      ></a-entity>
+      <a-entity
+        id="modelo-adicional6"
+        gltf-model="#mi-modelo16"
+        rotation="0 0 0"
+        position="-11 1.2 -10.2"
+        scale="0.1 0.1 0.1"
+        visible="false"
+      ></a-entity>
+      <a-entity
+        id="modelo-adicional7"
+        gltf-model="#mi-modelo17"
+        rotation="0 0 0"
+        position="-11 1.2 -10.2"
+        scale="0.1 0.1 0.1"
+        visible="false"
+      ></a-entity>
+      <a-entity
+        id="modelo-adicional8"
+        gltf-model="#mi-modelo18"
+        rotation="0 90 0"
+        position="-11 1.2 -10.2"
+        scale="1.5 1.5 1.5"
+        visible="false"
+      ></a-entity>
+      <a-entity
+        id="modelo-adicional9"
+        gltf-model="#mi-modelo19"
+        rotation="0 0 0"
+        position="-11 1.2 -10.2"
+        scale="1.3 1.3 1.3"
+        visible="false"
+      ></a-entity>
+      <a-entity
+        id="modelo-adicional10"
+        gltf-model="#mi-modelo20"
+        rotation="0 0 0"
+        position="-11 1.2 -10.2"
+        scale="0.4 0.4 0.4"
+        visible="false"
+      ></a-entity>
 
       <a-entity position="-7 1.3 -9" rotation="0 0 0">
-        <a-box src="#texturaRojo" height="0.2" width="0.4" depth="0.1" class="clickable4" cursor-listener></a-box>
-        <a-text value="!!!" color="#ECF0F1" align="center" position="0 -0.02 0.05" scale="0.5 0.5 0.5" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt"></a-text>
-  
+        <a-box
+          src="#texturaRojo"
+          height="0.2"
+          width="0.4"
+          depth="0.1"
+          class="clickable4"
+          cursor-listener
+        ></a-box>
+        <a-text
+          value="!!!"
+          color="#ECF0F1"
+          align="center"
+          position="0 -0.02 0.05"
+          scale="0.5 0.5 0.5"
+          font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt"
+        ></a-text>
       </a-entity>
 
       <a-entity position="-6 1.3 -9" rotation="0 0 0">
-        <a-box src="#texturaBuzon" height="0.2" width="0.4" depth="0.1" class="clickable2" cursor-listener></a-box>
-        <a-text value="Ver AR" color="black" align="center" position="0 -0.02 0.05" scale="0.5 0.5 0.5" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt"></a-text>
-  
+        <a-box
+          src="#texturaBuzon"
+          height="0.2"
+          width="0.4"
+          depth="0.1"
+          class="clickable2"
+          cursor-listener
+        ></a-box>
+        <a-text
+          value="Ver AR"
+          color="black"
+          align="center"
+          position="0 -0.02 0.05"
+          scale="0.5 0.5 0.5"
+          font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt"
+        ></a-text>
       </a-entity>
 
-
-      <a-entity id="menu2" visible="false" position="-7 2.5 -12" rotation="0 0 0">
+      <a-entity
+        id="menu2"
+        visible="false"
+        position="-7 2.5 -12"
+        rotation="0 0 0"
+      >
         <a-plane color="white" width="3.5" height="1.5"></a-plane>
-        <a-text value="Bienvenido!" color="black" align="center" position="0 0.2 0.05"></a-text>
-        <a-text value="Puedes realizar un recorrido o acceder al modo AR" color="black" align="center" position="0 -0.3 0.05" scale="0.7 0.7 0.7" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt"></a-text>
+        <a-text
+          value="Bienvenido!"
+          color="black"
+          align="center"
+          position="0 0.2 0.05"
+        ></a-text>
+        <a-text
+          value="Puedes realizar un recorrido o acceder al modo AR"
+          color="black"
+          align="center"
+          position="0 -0.3 0.05"
+          scale="0.7 0.7 0.7"
+          font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt"
+        ></a-text>
       </a-entity>
-
-
 
       <a-entity camera wasd-controls look-controls position="-7 2 3">
-        <a-entity cursor position="0 0 -1" geometry="primitive:ring; radiusInner:0.03; radiusOuter:0.04;"></a-entity>
+        <a-entity
+          cursor
+          position="0 0 -1"
+          geometry="primitive:ring; radiusInner:0.03; radiusOuter:0.04;"
+        ></a-entity>
       </a-entity>
-      
+
       <a-sky color="skyblue"></a-sky>
 
+      <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        import {
+          getFirestore,
+          collection,
+          addDoc,
+        } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 
-
-      <script>
         // Al cargar el documento
         document.addEventListener("DOMContentLoaded", function() {
           var menu = document.getElementById('form-container');
@@ -122,7 +259,17 @@
           const btnSendDataToBackend = document.getElementById('btnSendDataToBackend');
   
   
-  
+          const firebaseConfig = {
+            apiKey: "AIzaSyAoI5oQyAWizz9QMrEKxfgrp7PpsxWUULA",
+            authDomain: "softcomputo-agro.firebaseapp.com",
+            projectId: "softcomputo-agro",
+            storageBucket: "softcomputo-agro.appspot.com",
+            messagingSenderId: "812027506529",
+            appId: "1:812027506529:web:7bc43a3bf1617ec7275f20",
+          };
+
+          const app = initializeApp(firebaseConfig);
+          const db = getFirestore(app);
 
 
           box3.addEventListener('click', function() {
@@ -151,12 +298,12 @@
   
               async function sendDataToBackend(data) {
                 try {
-                  const response = await axios.post("http://localhost:8080/productos/agregar", data);
-                  console.log("Respuesta del backend:", response.data);
+                  await addDoc(collection(db, "productos"), data);
+                  console.log("Datos enviados a Firestore correctamente");
                   alert("Pedido enviado correctamente");
                 } catch (error) {
-                  console.error("Error al enviar datos al backend:", error);
-                  alert("Ocurrió un error al enviar los datos al backend.");
+                  console.error("Error al enviar datos a Firestore:", error);
+                  alert("Ocurrió un error al enviar los datos a Firestore.");
                 }
               }
   
@@ -408,11 +555,11 @@
                   precioSeleccionado = obtenerPrecioHamburguesa(selectedOption);
                   const cantidad = document.getElementById('cantidad').value;
                   data = {
-                    nombre: "Bebidas",
+                    nombre: selectedOption,
                     descripcion: "Bebidas " + selectedOption,
                     precio: precioSeleccionado,
                     cantidad: cantidad,
-                    tipo: selectedOption
+                    tipo: Bebidas
                   };
                 } else if (selectedFood === "aseo") {
                   const aseoOptions = document.getElementById('aseoOptions');
@@ -420,11 +567,11 @@
                   precioSeleccionado = obtenerPrecioPizza(selectedOption);
                   const cantidad = document.getElementById('cantidad').value;
                   data = {
-                    nombre: "Aseo",
+                    nombre: selectedOption,
                     descripcion: "Aseo " + selectedOption,
                     precio: precioSeleccionado,
                     cantidad: cantidad,
-                    tipo: selectedOption
+                    tipo: Aseo
                   };
                 } else if (selectedFood === "alimentos") {
                   const alimentoOptions = document.getElementById('alimentoOptions');
@@ -432,11 +579,11 @@
                   precioSeleccionado = obtenerPrecioAlmuerzo(selectedOption);
                   const cantidad = document.getElementById('cantidad').value;
                   data = {
-                    nombre: "Alimentos",
+                    nombre: selectedOption,
                     descripcion: "Alimentos de " + selectedOption,
                     precio: precioSeleccionado,
                     cantidad: cantidad,
-                    tipo: selectedOption
+                    tipo: "Alimento"
                   };
                 }
   
@@ -461,16 +608,6 @@
   
   
           });
-
-
-
-
-
-
-
-
-
-
 
           function obtenerPrecioHamburguesa(tipo) {
             switch (tipo) {
@@ -535,6 +672,7 @@
     </a-scene>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script src="script.js"></script>
   </body>
 </html>
